@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2410郑凯彬</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+
+<body>
+    <div class="shell">
+        <div class="shell-top">
+            <div class="word">
+                <h2>2410郑凯彬の网站</h2>
+            </div>
+            <video loop autoplay muted>
+              <source src="../image/wall.mp4" type="video/mp4">
+            </video>
+
+        </div>
+        <div class="shell-main">
+            <div class="shell-main-nav">
+                <div class="logo">
+                    <img src="../image/logo.jpg" alt="">
+                    <span>郑凯彬</span>
+                </div>
+				
+                <ul>
+                    <li><a href="index.html" style="font-size: 22px;">关于我们</a></li>
+                    <li><a href="hb.html" style="font-size: 22px;">兴趣爱好&nbsp;</a></li>
+                    <li><a href="song.html" style="font-size: 22px;">&nbsp;喜欢的歌</a></li>
+                    <li><a href="info.html" style="font-size: 22px;">简要信息</a></li>
+                    <li><a href="Login.html" style="font-size: 22px;">登录界面</a></li>
+                    <div class="nav-box"></div>
+                </ul>
+            </div>
+                <div class="shell-main-header">
+                  <div class="shell-main-header-left">
+                        <div class="shell-main-header-left-top">
+                        </div>
+                        <div class="shell-main-header-left-bottom">
+                            <span style="color: rgb(0, 0, 0); font-size: 72px;">欢迎来到这里</span><br>
+							<span style="color: rgba(95,95,95,1); font-size: 36px;">这个网站可以帮助你简单了解我</span>
+                      </div>
+                        <div class="shell-main-header-left-footer">
+                        </div>
+                    </div>
+                    <div class="shell-main-header-right"></div>
+                </div>
+                <div class="shell-main-footer">
+                    <span>到底了</span>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script> 
+<script>
+    window.addEventListener('scroll', function () {
+        let top = window.scrollY;
+        if (top != 0) {
+            $('.shell-top').css('top', '-100vh');
+            $('.shell-main').css('top', '0');
+            $('.shell-main-lbt-word').css('transform', 'translateY(0px)');
+            $('.shell-main-lbt-word').css('backdrop-filter', 'blur(5px)');
+            $('.shell-main-lbt-word h2').css('transform', 'translate(0px)');
+            $('.shell-main-lbt-word span').css('transform', 'translate(0px)');
+        } else {
+            $('.shell-top').css('top', '0px');
+            $('.shell-main').css('top', '100vh');
+            $('.shell-main-lbt-word').css('transform', 'translateY(400px)');
+            $('.shell-main-lbt-word').css('backdrop-filter', 'blur(0px)');
+            $('.shell-main-lbt-word h2').css('transform', 'translate(520px)');
+            $('.shell-main-lbt-word span').css('transform', 'translate(-620px)');
+        }
+        if (top > 35) {
+            $('.shell-main-header-left-top').css('opacity', '1').css('transform', 'translateY(0px)');
+            $('.shell-main-header-left-bottom').css('opacity', '1').css('transform', 'translateY(0px)');
+            $('.shell-main-header-left-footer').css('opacity', '1').css('transform', 'translateY(0px)');
+        } else {
+            $('.shell-main-header-left-top').css('opacity', '0').css('transform', 'translateY(400px)');
+            $('.shell-main-header-left-bottom').css('opacity', '0').css('transform', 'translateY(400px)');
+            $('.shell-main-header-left-footer').css('opacity', '0').css('transform', 'translateY(400px)');
+        }
+    });
+</script>
+
+</html>

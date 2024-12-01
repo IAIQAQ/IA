@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喜欢的歌</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <style>
+        body .shell-main-nav ul .nav-box {
+            left: 240px;
+        }
+
+        body .shell-main {
+            margin-bottom: 0;
+        }
+
+        body .shell-main-nav {
+            margin-bottom: 0;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(to bottom, #a1e6ff, #a1e6ff);
+            height: 900px;
+        }
+
+        header img {
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        header h2 {
+            font: 100 60px '';
+            margin-bottom: 2px;
+            font-family: font;
+            letter-spacing: 5px;
+            border-bottom: 2px solid rgb(134, 134, 118);
+            color: #ffffff;
+        }
+
+        header p {
+            font: 100 30px '';
+            letter-spacing: 5px;
+        }
+
+        .h-b {
+            display: flex;
+            justify-content: space-evenly;
+            width: 50%;
+        }
+
+        .h-b p {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .h-b-l,
+        .h-b-r {
+            width: 20%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer {
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            border: 1px rgba(0, 0, 0, 0.187) solid;
+            margin: 20px 0;
+        }
+
+        .left {
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left p {
+            text-align: left;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            font: 600 25px '';
+            color: rgb(147, 145, 142);
+        }
+
+        .top {
+            margin: 30px 0;
+        }
+
+        .top table {
+            margin: 30px 0;
+            width: 100%;
+            border-collapse: collapse;
+            border: rgba(0, 0, 0, 0.216);
+        }
+
+        .top table td {
+            padding: 3px 10px;
+        }
+
+        .top table th {
+            background-color: rgb(248, 248, 248);
+        }
+
+        .left h2,
+        .right h2 {
+            font-size: 30px;
+            position: relative;
+            width: 100%;
+        }
+
+        .left h2::after,
+        .right h2::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -20px;
+            background-color: rgb(100, 160, 240);
+            width: 15px;
+            height: 100%;
+            top: 0;
+        }
+
+        .right h2::after {
+            left: 0;
+        }
+
+        .right h2 {
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        .left h2::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 80%;
+            height: 10px;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: rgba(0, 0, 0, 0.223);
+        }
+
+        .left span {
+            font-size: 15px;
+        }
+
+        .imgs {
+            width: 100%;
+            display: flex;
+        }
+
+        .imgs img {
+            width: 25%;
+        }
+
+
+        .right {
+            width: 25%;
+            padding: 10px;
+        }
+
+        .right img {
+            width: 100%;
+            margin: 30px 0;
+        }
+
+        .bottom {
+            position: sticky;
+            top: 10px;
+        }
+
+        .b {
+            width: 100%;
+            background-color: #fff;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border: rgba(0, 0, 0, 0.216) 1px solid;
+        }
+
+        @media (max-width:1000px){
+            .h-b-r,.h-b-l,.right{
+                display: none;
+            }
+            .content{
+                justify-content: center;
+            }
+        }
+
+        .music-box {
+            width: 300px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .music-box img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .music-info {
+            margin-top: 10px;
+        }
+
+        .play-pause-btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            background-color: #fff;
+            cursor: pointer;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .play-pause-btn:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="shell-main">
+        <div class="shell-main-nav">
+            <div class="logo">
+                <img src="../image/logo.jpg" alt="">
+                <span>郑凯彬</span>
+            </div>
+            <ul>
+                <li><a href="index.html" style="font-size: 22px;">关于我们</a></li>
+                <li><a href="hb.html" style="font-size: 22px;">兴趣爱好</a></li>
+                <li><a href="song.html" style="font-size: 22px;">喜欢的歌</a></li>
+                <li><a href="info.html" style="font-size: 22px;">简要信息</a></li>
+                <li><a href="Login.html" style="font-size: 22px;">登录界面</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </div>
+        <header>
+            <div class="music-box">
+                <img src="../image/spsp.jpg" alt="歌曲封面">
+                <div class="music-info">
+                    <h2 style="font-size: 50px">Sacred Play Secret Place</h2>
+                    <p>Matryoshka</p>
+                </div>
+                <div class="music-info">
+                    <button class="play-pause-btn" id="playPauseBtn">
+                        &#9658;
+                    </button>
+                </div>
+            </div>
+            <video id="videoPlayer" loop autoplay >
+                <source src="../image/spsp.mp4" type="video/mp4">
+            </video>
+        </header>
+    </div>
+    <script>
+        const videoPlayer = document.getElementById('videoPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        playPauseBtn.addEventListener('click', function () {
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                playPauseBtn.innerHTML = '&#10074;&#10074;'; 
+            } else {
+                videoPlayer.pause();
+                playPauseBtn.innerHTML = '&#9658;'; 
+            }
+        });
+    </script>
+</body>
+</html>

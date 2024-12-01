@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兴趣爱好</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <style>
+		.intro {
+            font-size: 30px;
+			font-family: font;
+        }
+
+        .images {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .images .image-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .images img {
+            width: 60%; 
+            margin-right: 20px; 
+            transition: .3s;
+            opacity: 0.8;
+        }
+
+        .images img:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .game-intro {
+            width: 60%;
+            padding: 20px;
+        }
+
+        .image {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items:center;
+            top: 0;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="shell-main">
+        <div class="shell-main-nav">
+            <div class="logo">
+                <img src="../image/logo.jpg" alt="">
+                <span>郑凯彬</span>
+            </div>
+            <ul>
+                <li><a href="index.html" style="font-size: 22px;">关于我们</a></li>
+                <li><a href="hb.html" style="font-size: 22px;">兴趣爱好&nbsp;</a></li>
+                <li><a href="song.html" style="font-size: 22px;">&nbsp;喜欢的歌</a></li>
+                <li><a href="info.html" style="font-size: 22px;">简要信息</a></li>
+                <li><a href="Login.html" style="font-size: 22px;">登录界面</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </div>
+        <div class="image"></div>
+        <div class="images"></div>
+
+    <div class="shell-main-footer">
+        <span>到底了</span>
+    </div>
+    
+    <script>
+		let images = document.querySelector('.images');
+		let image = document.querySelector('.image');
+		// 定义每个游戏的介绍
+		const gameDescriptions = {
+		  '1': '《英雄联盟》(League of Legends) 是一款多人在线战斗竞技游戏。',
+		  '2': '《黑暗之魂3》(Dark Souls III) 是一款以探索和战斗为主的行动角色扮演游戏。',
+		  '3': '《只狼：影逝二度》(Sekiro: Shadows Die Twice) 是一款动作冒险游戏。',
+		  '4': '《艾尔登法环》(Elden Ring) 是一款开放世界的动作角色扮演游戏。'
+		};
+
+		for (let i = 1; i <= 4; i++) {
+			var container = document.createElement('div');
+			container.className = 'image-container';
+			var imgElement = document.createElement('img');
+			imgElement.className = 'img';
+			imgElement.src = `../image/img/img (${i}).png`;
+			// 根据图片编号获取对应的游戏介绍
+			var introElement = document.createElement('p');
+			introElement.className = 'intro';
+			// 确保键名与gameDescriptions中的键名匹配
+			introElement.textContent = gameDescriptions[i]; // 直接使用i作为键名
+			container.appendChild(imgElement);
+			container.appendChild(introElement);
+			images.appendChild(container);
+		}
+
+		let img = document.querySelectorAll('.img');
+		for (let i = 0; i < img.length; i++) {
+			img[i].addEventListener("click", () => {
+				image.style.display = "flex";
+				let index = i + 1;
+				image.innerHTML = `<img src='../image/img/img (${index}).png'>`;
+				document.body.style.overflow = 'hidden';
+			});
+		}
+
+		image.addEventListener('click', () => {
+			image.style.display = "none";
+			document.body.style.overflow = 'auto';
+		});
+    </script>
+</body>
+</html>
